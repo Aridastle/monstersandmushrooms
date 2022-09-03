@@ -1,6 +1,7 @@
 package net.aridastle.monstersandmushrooms;
 
 import com.mojang.logging.LogUtils;
+import net.aridastle.monstersandmushrooms.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,12 +15,14 @@ import org.slf4j.Logger;
 @Mod(monstersandmushrooms.MOD_ID)
 public class monstersandmushrooms
 {
-    public static final String MOD_ID = "net/aridastle/monstersandmushrooms";
+    public static final String MOD_ID = "monstersandmushrooms";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public monstersandmushrooms()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
