@@ -1,0 +1,45 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "shaft",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-0.5, 1, -0.5], "size": [1, 40, 1], "uv": [0, 0]},
+						{"origin": [-1, 36, -1], "size": [2, 6, 2], "uv": [24, 25]},
+						{"origin": [-5, 43, -1], "size": [2, 6, 2], "uv": [18, 19]},
+						{"origin": [-5, 42, -0.5], "size": [10, 1, 1], "uv": [4, 0]},
+						{"origin": [3, 43, -1], "size": [2, 9, 2], "uv": [12, 10]},
+						{"origin": [-1, 29, -1], "size": [2, 6, 2], "uv": [20, 2]},
+						{"origin": [-1, 16, -1], "size": [2, 10, 2], "uv": [4, 10]},
+						{"origin": [-1, 0, -1], "size": [2, 6, 2], "uv": [10, 21]},
+						{"origin": [-1, 7, -1], "size": [2, 6, 2], "uv": [20, 10]}
+					]
+				},
+				{
+					"name": "top",
+					"parent": "root",
+					"pivot": [0, 46, 0],
+					"cubes": [
+						{"origin": [-2, 44, -2], "size": [4, 4, 4], "uv": [4, 2]}
+					]
+				}
+			]
+		}
+	]
+}

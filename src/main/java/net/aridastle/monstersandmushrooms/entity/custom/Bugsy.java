@@ -42,7 +42,7 @@ public class Bugsy extends Monster implements IAnimatable, NeutralMob {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.00)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f)
-                .add(Attributes.ATTACK_SPEED, 2.0f)
+                .add(Attributes.ATTACK_SPEED, 4.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f)
                 .build();
     }

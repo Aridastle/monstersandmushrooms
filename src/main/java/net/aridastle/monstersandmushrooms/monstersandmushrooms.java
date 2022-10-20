@@ -2,7 +2,7 @@ package net.aridastle.monstersandmushrooms;
 
 import com.mojang.logging.LogUtils;
 import net.aridastle.monstersandmushrooms.entity.ModEntityTypes;
-import net.aridastle.monstersandmushrooms.entity.client.BugsyRenderer;
+import net.aridastle.monstersandmushrooms.entity.client.*;
 import net.aridastle.monstersandmushrooms.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
@@ -48,7 +48,11 @@ public class monstersandmushrooms
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(ModEntityTypes.AVALA.get(), AvalaRenderer::new);
             EntityRenderers.register(ModEntityTypes.BUGSY.get(), BugsyRenderer::new);
+            EntityRenderers.register(ModEntityTypes.GNOME.get(), GnomeRenderer::new);
+            EntityRenderers.register(ModEntityTypes.MAGGART.get(), MaggartRenderer::new);
+            EntityRenderers.register(ModEntityTypes.SHROOMSTER.get(), ShroomsterRenderer::new);
         }
     }
 }

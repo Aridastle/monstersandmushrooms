@@ -1,0 +1,125 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [16, 0, -16]
+				},
+				{
+					"name": "blade",
+					"parent": "root",
+					"pivot": [8, 0, -8],
+					"cubes": [
+						{"origin": [0, 7, 0], "size": [2, 1, 1], "uv": [15, 17]},
+						{"origin": [0, 6, 0], "size": [2, 1, 1], "uv": [17, 13]},
+						{"origin": [-1, 8, 0], "size": [2, 1, 1], "uv": [17, 11]},
+						{"origin": [-1, 7, 0], "size": [1, 1, 1], "uv": [10, 23]},
+						{"origin": [-2, 9, 0], "size": [2, 1, 1], "uv": [17, 8]},
+						{"origin": [-2, 8, 0], "size": [1, 1, 1], "uv": [0, 23]},
+						{"origin": [-3, 10, 0], "size": [2, 1, 1], "uv": [17, 6]},
+						{"origin": [-3, 9, 0], "size": [1, 1, 1], "uv": [22, 21]},
+						{"origin": [-4, 11, 0], "size": [2, 1, 1], "uv": [5, 17]},
+						{"origin": [-4, 10, 0], "size": [1, 1, 1], "uv": [18, 22]},
+						{"origin": [-5, 12, 0], "size": [2, 1, 1], "uv": [16, 0]},
+						{"origin": [-5, 11, 0], "size": [1, 1, 1], "uv": [22, 14]},
+						{"origin": [-6, 13, 0], "size": [2, 1, 1], "uv": [0, 16]},
+						{"origin": [-6, 12, 0], "size": [1, 1, 1], "uv": [22, 12]},
+						{"origin": [-7, 14, 0], "size": [2, 1, 1], "uv": [15, 15]},
+						{"origin": [-7, 13, 0], "size": [1, 1, 1], "uv": [22, 9]},
+						{"origin": [-8, 15, 0], "size": [4, 1, 1], "uv": [0, 6]},
+						{"origin": [-8, 12, 0], "size": [1, 3, 1], "uv": [11, 15]}
+					]
+				},
+				{
+					"name": "guard",
+					"parent": "root",
+					"pivot": [8, 0, -8],
+					"cubes": [
+						{"origin": [2, 4, 0], "size": [1, 1, 1], "uv": [22, 7]},
+						{"origin": [0, 3, 0], "size": [2, 2, 1], "uv": [11, 12]},
+						{"origin": [-3, 2, 0], "size": [3, 2, 1], "uv": [0, 8]},
+						{"origin": [-1, 4, 0], "size": [1, 1, 1], "uv": [7, 22]},
+						{"origin": [3, 8, 0], "size": [1, 1, 1], "uv": [22, 4]},
+						{"origin": [3, 10, 0], "size": [1, 1, 1], "uv": [11, 21]},
+						{"origin": [-3, 4, 0], "size": [1, 1, 1], "uv": [19, 20]},
+						{"origin": [-4, 3, 0], "size": [1, 1, 1], "uv": [16, 19]},
+						{"origin": [2, 11, 0], "size": [2, 2, 1], "uv": [0, 11]},
+						{"origin": [1, 12, 0], "size": [1, 2, 1], "uv": [4, 19]},
+						{"origin": [-7, 7, 0], "size": [2, 1, 1], "uv": [10, 0]},
+						{"origin": [-7, 8, 0], "size": [1, 1, 1], "uv": [20, 18]},
+						{"origin": [-8, 6, 0], "size": [1, 4, 1], "uv": [8, 8]},
+						{"origin": [-6, 6, 0], "size": [2, 1, 1], "uv": [5, 13]},
+						{"origin": [0, 13, 0], "size": [1, 2, 1], "uv": [0, 18]},
+						{"origin": [-2, 15, 0], "size": [4, 1, 1], "uv": [0, 0]},
+						{"origin": [-1, 14, 0], "size": [1, 1, 1], "uv": [20, 16]},
+						{"origin": [4, 11, 0], "size": [1, 1, 1], "uv": [21, 1]},
+						{"origin": [-5, 4, 0], "size": [2, 2, 1], "uv": [11, 6]},
+						{"origin": [0, 5, 0], "size": [2, 1, 1], "uv": [5, 15]},
+						{"origin": [4, 8, 0], "size": [2, 3, 1], "uv": [8, 2]},
+						{"origin": [2, 5, 0], "size": [2, 1, 1], "uv": [14, 4]},
+						{"origin": [3, 6, 0], "size": [2, 2, 1], "uv": [12, 9]},
+						{"origin": [2, 6, 0], "size": [1, 2, 1], "uv": [8, 19]}
+					]
+				},
+				{
+					"name": "dripdark",
+					"parent": "guard",
+					"pivot": [1, 3, 0],
+					"cubes": [
+						{"origin": [1, 3, 0], "size": [1, 1, 1], "uv": [19, 3]}
+					]
+				},
+				{
+					"name": "dripmedium",
+					"parent": "guard",
+					"pivot": [-4, 3, 0],
+					"cubes": [
+						{"origin": [-4, 3, 0], "size": [1, 1, 1], "uv": [12, 19]}
+					]
+				},
+				{
+					"name": "driplight",
+					"parent": "guard",
+					"pivot": [-8, 6, 0],
+					"cubes": [
+						{"origin": [-8, 6, 0], "size": [1, 1, 1], "uv": [0, 21]}
+					]
+				},
+				{
+					"name": "pommel",
+					"parent": "root",
+					"pivot": [8, 0, -8],
+					"cubes": [
+						{"origin": [5, 0, 0], "size": [3, 3, 1], "uv": [0, 2]}
+					]
+				},
+				{
+					"name": "hilt",
+					"parent": "root",
+					"pivot": [8, 0, -8],
+					"cubes": [
+						{"origin": [3, 3, 0], "size": [1, 1, 1], "uv": [3, 22]},
+						{"origin": [4, 3, 0], "size": [2, 1, 1], "uv": [14, 2]},
+						{"origin": [4, 2, 0], "size": [1, 1, 1], "uv": [15, 21]},
+						{"origin": [3, 4, 0], "size": [2, 1, 1], "uv": [0, 14]}
+					]
+				},
+				{
+					"name": "aura",
+					"parent": "root",
+					"pivot": [8, 4, -16]
+				}
+			]
+		}
+	]
+}

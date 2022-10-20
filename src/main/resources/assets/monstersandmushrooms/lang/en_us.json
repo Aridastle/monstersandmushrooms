@@ -1,7 +1,11 @@
 {
   "item.monstersandmushrooms.mushroom": "Mushroom",
   "item.monstersandmushrooms.evil_mushroom": "Evil Mushroom",
+  "item.monstersandmushrooms.avala_spawn_egg": "Avala Spawn Egg",
   "item.monstersandmushrooms.bugsy_spawn_egg": "Bugsy Spawn Egg",
+  "item.monstersandmushrooms.gnome_spawn_egg": "Gnome Spawn Egg",
+  "item.monstersandmushrooms.maggart_spawn_egg": "Maggart Spawn Egg",
+  "item.monstersandmushrooms.shroomster_spawn_egg": "Shroomster Spawn Egg",
 
   "itemGroup.monstersandmushroomstab": "Monsters & Mushrooms"
 }
