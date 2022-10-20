@@ -1,6 +1,7 @@
 package net.aridastle.monstersandmushrooms;
 
 import com.mojang.logging.LogUtils;
+import net.aridastle.monstersandmushrooms.block.ModBlocks;
 import net.aridastle.monstersandmushrooms.entity.ModEntityTypes;
 import net.aridastle.monstersandmushrooms.entity.client.*;
 import net.aridastle.monstersandmushrooms.item.ModItems;
@@ -27,6 +28,7 @@ public class monstersandmushrooms
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModEntityTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);

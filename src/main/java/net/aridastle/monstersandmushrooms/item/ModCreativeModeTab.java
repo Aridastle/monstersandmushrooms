@@ -7,7 +7,7 @@ public class ModCreativeModeTab {
     public static final CreativeModeTab MONSTERSANDMUSHROOMS_TAB = new CreativeModeTab("monstersandmushroomstab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.MUSHROOM.get());
+            return new ItemStack(ModItems.MAGIC_MUSHROOM.get());
         }
     };
 }

@@ -1,11 +1,21 @@
 {
-  "item.monstersandmushrooms.mushroom": "Mushroom",
-  "item.monstersandmushrooms.evil_mushroom": "Evil Mushroom",
+  "item.monstersandmushrooms.magic_mushroom": "Magic Mushroom",
+  "item.monstersandmushrooms.insect_leg": "Insect Leg",
+  "item.monstersandmushrooms.ice_crystal": "Ice Crystal",
+  "item.monstersandmushrooms.rare_earth": "Rare Earth",
+  "item.monstersandmushrooms.suspicious_leaf": "Suspicious Leaf",
+
   "item.monstersandmushrooms.avala_spawn_egg": "Avala Spawn Egg",
   "item.monstersandmushrooms.bugsy_spawn_egg": "Bugsy Spawn Egg",
   "item.monstersandmushrooms.gnome_spawn_egg": "Gnome Spawn Egg",
   "item.monstersandmushrooms.maggart_spawn_egg": "Maggart Spawn Egg",
   "item.monstersandmushrooms.shroomster_spawn_egg": "Shroomster Spawn Egg",
+
+  "block.monstersandmushrooms.calcite_bricks": "Calcite Bricks",
+  "block.monstersandmushrooms.cobbled_coal": "Cobbled Coal",
+  "block.monstersandmushrooms.icy_deepslate_tiles": "Icy Deepslate Tiles",
+  "block.monstersandmushrooms.polished_amethyst": "Polished Amethyst",
+  "block.monstersandmushrooms.rocky_moss": "Rocky Moss",
 
   "itemGroup.monstersandmushroomstab": "Monsters & Mushrooms"
 }

@@ -13,10 +13,19 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, monstersandmushrooms.MOD_ID);
 
-    public static final RegistryObject<Item> MUSHROOM = ITEMS.register("mushroom",
+    public static final RegistryObject<Item> MAGIC_MUSHROOM = ITEMS.register("magic_mushroom",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
 
-    public static final RegistryObject<Item> EVIL_MUSHROOM = ITEMS.register("evil_mushroom",
+    public static final RegistryObject<Item> INSECT_LEG = ITEMS.register("insect_leg",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+
+    public static final RegistryObject<Item> ICE_CRYSTAL = ITEMS.register("ice_crystal",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+
+    public static final RegistryObject<Item> RARE_EARTH = ITEMS.register("rare_earth",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+
+    public static final RegistryObject<Item> SUSPICIOUS_LEAF = ITEMS.register("suspicious_leaf",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
 
     public static final RegistryObject<ForgeSpawnEggItem> AVALA_SPAWN_EGG = ITEMS.register("avala_spawn_egg",

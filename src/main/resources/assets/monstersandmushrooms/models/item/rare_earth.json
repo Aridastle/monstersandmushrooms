@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "monstersandmushrooms:item/mushroom"
+    "layer0": "monstersandmushrooms:item/rare_earth"
   }
 }
