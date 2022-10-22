@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#R#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:calcite"
+    },
+    "R": {
+      "item": "monstersandmushrooms:rare_earth"
+    }
+  },
+  "result": {
+    "count": 16,
+    "item": "monstersandmushrooms:calcite_bricks"
+  }
+}

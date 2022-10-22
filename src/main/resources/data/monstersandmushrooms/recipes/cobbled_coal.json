@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#R#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:coal"
+    },
+    "R": {
+      "item": "monstersandmushrooms:insect_leg"
+    }
+  },
+  "result": {
+    "count": 16,
+    "item": "monstersandmushrooms:cobbled_coal"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "monstersandmushrooms:calcite_bricks",
+    "monstersandmushrooms:cobbled_coal",
+    "monstersandmushrooms:icy_deepslate_tiles",
+    "monstersandmushrooms:polished_amethyst"
+  ]
+}

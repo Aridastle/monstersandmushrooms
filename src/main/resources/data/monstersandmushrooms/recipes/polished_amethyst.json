@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#R#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:amethyst_block"
+    },
+    "R": {
+      "item": "monstersandmushrooms:magic_mushroom"
+    }
+  },
+  "result": {
+    "count": 16,
+    "item": "monstersandmushrooms:polished_amethyst"
+  }
+}

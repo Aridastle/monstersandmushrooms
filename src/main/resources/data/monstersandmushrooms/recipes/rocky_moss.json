@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#R#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:moss"
+    },
+    "R": {
+      "item": "monstersandmushrooms:suspicious_leaf"
+    }
+  },
+  "result": {
+    "count": 16,
+    "item": "monstersandmushrooms:rocky_moss"
+  }
+}
