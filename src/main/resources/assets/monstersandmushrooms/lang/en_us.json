@@ -17,5 +17,10 @@
   "block.monstersandmushrooms.polished_amethyst": "Polished Amethyst",
   "block.monstersandmushrooms.rocky_moss": "Rocky Moss",
 
+  "item.monstersandmushrooms.goat_helmet": "Goat Helmet",
+  "item.monstersandmushrooms.goat_chestplate": "Goat Chestplate",
+  "item.monstersandmushrooms.goat_leggings": "Goat Leggings",
+  "item.monstersandmushrooms.goat_boots": "Goat Boots",
+
   "itemGroup.monstersandmushroomstab": "Monsters & Mushrooms"
 }

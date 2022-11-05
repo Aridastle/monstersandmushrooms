@@ -24,25 +24,25 @@ public enum ModArmorMaterials implements ArmorMaterial {
     MAGIC_MUSHROOM("magic_mushroom", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 3.0F, 0.1F, () -> {
         return Ingredient.of(ModItems.MAGIC_MUSHROOM.get());
     }),
-    INSECT_LEG("insect_leg", 37, new int[]{4, 7, 9, 4}, 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
+    INSECT_LEG("insect_leg", 37, new int[]{4, 6, 8, 4}, 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
         return Ingredient.of(ModItems.INSECT_LEG.get());
     }),
-    RARE_EARTH("rare_earth", 37, new int[]{4, 7, 9, 4}, 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
+    RARE_EARTH("rare_earth", 37, new int[]{4, 6, 8, 4}, 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
         return Ingredient.of(ModItems.RARE_EARTH.get());
     }),
-    GUARDIAN("guardian", 37, new int[]{4, 7, 9, 4}, 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
+    GUARDIAN("guardian", 37, new int[]{4, 6, 8, 4}, 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
         return Ingredient.of(Items.SPONGE);
     }),
-    END("end", 37, new int[]{4, 7, 9, 4}, 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
+    END("end", 37, new int[]{4, 6, 8, 4}, 15, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
         return Ingredient.of(Items.SHULKER_SHELL);
     }),
-    GOAT("goat", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {
+    GOAT("goat", 37, new int[]{4, 7, 9, 4}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {
         return Ingredient.of(Items.GOAT_HORN);
     }),
-    WARDEN("warden", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {
+    WARDEN("warden", 37, new int[]{4, 7, 9, 4}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {
         return Ingredient.of(Items.SCULK_CATALYST);
     }),
-    ICE_CRYSTAL("ice_crystal", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {
+    ICE_CRYSTAL("ice_crystal", 37, new int[]{4, 7, 9, 4}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {
         return Ingredient.of(ModItems.ICE_CRYSTAL.get());
     });
 
