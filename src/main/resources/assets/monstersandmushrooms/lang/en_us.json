@@ -17,10 +17,60 @@
   "block.monstersandmushrooms.polished_amethyst": "Polished Amethyst",
   "block.monstersandmushrooms.rocky_moss": "Rocky Moss",
 
+  "item.monstersandmushrooms.avala_helmet": "Avala Helmet",
+  "item.monstersandmushrooms.avala_chestplate": "Avala Chestplate",
+  "item.monstersandmushrooms.avala_leggings": "Avala Leggings",
+  "item.monstersandmushrooms.avala_boots": "Avala Boots",
+
+  "item.monstersandmushrooms.bugsy_helmet": "Bugsy Helmet",
+  "item.monstersandmushrooms.bugsy_chestplate": "Bugsy Chestplate",
+  "item.monstersandmushrooms.bugsy_leggings": "Bugsy Leggings",
+  "item.monstersandmushrooms.bugsy_boots": "Bugsy Boots",
+
+  "item.monstersandmushrooms.end_helmet": "End Helmet",
+  "item.monstersandmushrooms.end_chestplate": "End Chestplate",
+  "item.monstersandmushrooms.end_leggings": "End Leggings",
+  "item.monstersandmushrooms.end_boots": "End Boots",
+
+  "item.monstersandmushrooms.evoker_helmet": "Evoker Helmet",
+  "item.monstersandmushrooms.evoker_chestplate": "Evoker Chestplate",
+  "item.monstersandmushrooms.evoker_leggings": "Evoker Leggings",
+  "item.monstersandmushrooms.evoker_boots": "Evoker Boots",
+
+  "item.monstersandmushrooms.gnome_helmet": "Gnome Helmet",
+  "item.monstersandmushrooms.gnome_chestplate": "Gnome Chestplate",
+  "item.monstersandmushrooms.gnome_leggings": "Gnome Leggings",
+  "item.monstersandmushrooms.gnome_boots": "Gnome Boots",
+
   "item.monstersandmushrooms.goat_helmet": "Goat Helmet",
   "item.monstersandmushrooms.goat_chestplate": "Goat Chestplate",
   "item.monstersandmushrooms.goat_leggings": "Goat Leggings",
   "item.monstersandmushrooms.goat_boots": "Goat Boots",
+
+  "item.monstersandmushrooms.guardian_helmet": "Guardian Helmet",
+  "item.monstersandmushrooms.guardian_chestplate": "Guardian Chestplate",
+  "item.monstersandmushrooms.guardian_leggings": "Guardian Leggings",
+  "item.monstersandmushrooms.guardian_boots": "Guardian Boots",
+
+  "item.monstersandmushrooms.maggart_helmet": "Maggart Helmet",
+  "item.monstersandmushrooms.maggart_chestplate": "Maggart Chestplate",
+  "item.monstersandmushrooms.maggart_leggings": "Maggart Leggings",
+  "item.monstersandmushrooms.maggart_boots": "Maggart Boots",
+
+  "item.monstersandmushrooms.shroomster_helmet": "Shroomster Helmet",
+  "item.monstersandmushrooms.shroomster_chestplate": "Shroomster Chestplate",
+  "item.monstersandmushrooms.shroomster_leggings": "Shroomster Leggings",
+  "item.monstersandmushrooms.shroomster_boots": "Shroomster Boots",
+
+  "item.monstersandmushrooms.warden_helmet": "Warden Helmet",
+  "item.monstersandmushrooms.warden_chestplate": "Warden Chestplate",
+  "item.monstersandmushrooms.warden_leggings": "Warden Leggings",
+  "item.monstersandmushrooms.warden_boots": "Warden Boots",
+
+  "item.monstersandmushrooms.wither_helmet": "Wither Helmet",
+  "item.monstersandmushrooms.wither_chestplate": "Wither Chestplate",
+  "item.monstersandmushrooms.wither_leggings": "Wither Leggings",
+  "item.monstersandmushrooms.wither_boots": "Wither Boots",
 
   "itemGroup.monstersandmushroomstab": "Monsters & Mushrooms"
 }

@@ -44,7 +44,6 @@ public class AvalaArmorItem extends GeoArmorItem implements IAnimatable {
     }
 
     private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event) {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
         return PlayState.CONTINUE;
     }
 
