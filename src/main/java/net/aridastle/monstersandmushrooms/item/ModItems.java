@@ -6,11 +6,14 @@ import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -186,6 +189,9 @@ public class ModItems {
             () -> new WitherArmorItem(ModArmorMaterials.WITHER, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
 
+    public static final RegistryObject<SwordItem> AVALASWORD = ITEMS.register("avalasword",
+            () -> new AvalaSwordItem(Tiers.NETHERITE, 4, (float) -2.4,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
     public static void register(IEventBus eventbus) {
         ITEMS.register(eventbus);
     }

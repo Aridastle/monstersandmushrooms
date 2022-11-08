@@ -11,6 +11,12 @@
   "item.monstersandmushrooms.maggart_spawn_egg": "Maggart Spawn Egg",
   "item.monstersandmushrooms.shroomster_spawn_egg": "Shroomster Spawn Egg",
 
+  "entity.monstersandmushrooms.avala": "Avala",
+  "entity.monstersandmushrooms.bugsy": "Bugsy",
+  "entity.monstersandmushrooms.gnome": "Gnome",
+  "entity.monstersandmushrooms.maggart": "Maggart",
+  "entity.monstersandmushrooms.shroomster": "Shroomster",
+
   "block.monstersandmushrooms.calcite_bricks": "Calcite Bricks",
   "block.monstersandmushrooms.cobbled_coal": "Cobbled Coal",
   "block.monstersandmushrooms.icy_deepslate_tiles": "Icy Deepslate Tiles",
@@ -71,6 +77,8 @@
   "item.monstersandmushrooms.wither_chestplate": "Wither Chestplate",
   "item.monstersandmushrooms.wither_leggings": "Wither Leggings",
   "item.monstersandmushrooms.wither_boots": "Wither Boots",
+
+  "item.monstersandmushrooms.avalasword": "Avala Sword",
 
   "itemGroup.monstersandmushroomstab": "Monsters & Mushrooms"
 }
