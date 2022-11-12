@@ -192,6 +192,15 @@ public class ModItems {
     public static final RegistryObject<SwordItem> AVALASWORD = ITEMS.register("avalasword",
             () -> new AvalaSwordItem(Tiers.NETHERITE, 4, (float) -2.4,
                     new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> ENDSTAFF = ITEMS.register("endstaff",
+            () -> new EnderStaffItem(Tiers.NETHERITE, 3, (float) -2.2,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> MEANGREENWAND = ITEMS.register("meangreenwand",
+            () -> new MeangreenWandItem(Tiers.NETHERITE, 2, (float) -1.9,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> ENDWAND = ITEMS.register("endwand",
+            () -> new ShulkerWandItem(Tiers.NETHERITE, 2, (float) -1.9,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
     public static void register(IEventBus eventbus) {
         ITEMS.register(eventbus);
     }
