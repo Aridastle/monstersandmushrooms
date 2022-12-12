@@ -1,0 +1,10 @@
+package net.aridastle.monstersandmushrooms.entity.client.weapon;
+
+import net.aridastle.monstersandmushrooms.item.custom.MaggartStaffItem;
+import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
+
+public class MaggartStaffRenderer extends GeoItemRenderer<MaggartStaffItem> {
+    public MaggartStaffRenderer() {
+        super(new MaggartStaffModel());
+    }
+}

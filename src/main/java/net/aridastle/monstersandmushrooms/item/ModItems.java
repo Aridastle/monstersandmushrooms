@@ -4,10 +4,7 @@ import net.aridastle.monstersandmushrooms.entity.ModEntityTypes;
 import net.aridastle.monstersandmushrooms.item.custom.*;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -192,14 +189,46 @@ public class ModItems {
     public static final RegistryObject<SwordItem> AVALASWORD = ITEMS.register("avalasword",
             () -> new AvalaSwordItem(Tiers.NETHERITE, 4, (float) -2.4,
                     new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> DROWNEDSWORD = ITEMS.register("drownedsword",
+            () -> new DrownedSwordItem(Tiers.NETHERITE, 4, (float) -2.4,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> BRUTESWORD = ITEMS.register("brutesword",
+            () -> new BruteSwordItem(Tiers.NETHERITE, 4, (float) -2.4,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> CHORUSSWORD = ITEMS.register("chorussword",
+            () -> new ChorusSwordItem(Tiers.NETHERITE, 4, (float) -2.4,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<PickaxeItem> GNOMESWORD = ITEMS.register("gnomesword",
+            () -> new GnomeSwordItem(Tiers.NETHERITE, 4, (float) -2.4,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+
     public static final RegistryObject<SwordItem> ENDSTAFF = ITEMS.register("endstaff",
             () -> new EnderStaffItem(Tiers.NETHERITE, 3, (float) -2.2,
                     new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> STRAYSTAFF = ITEMS.register("straystaff",
+            () -> new StrayStaffItem(Tiers.NETHERITE, 3, (float) -2.2,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> MAGMACUBESTAFF = ITEMS.register("magmacubestaff",
+            () -> new MagmaCubeStaffItem(Tiers.NETHERITE, 3, (float) -2.2,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> MAGGARTSTAFF = ITEMS.register("maggartstaff",
+            () -> new MaggartStaffItem(Tiers.NETHERITE, 3, (float) -2.2,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> SHROOMSTERSTAFF = ITEMS.register("shroomsterstaff",
+            () -> new ShroomsterStaffItem(Tiers.NETHERITE, 3, (float) -2.2,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+
     public static final RegistryObject<SwordItem> MEANGREENWAND = ITEMS.register("meangreenwand",
             () -> new MeangreenWandItem(Tiers.NETHERITE, 2, (float) -1.9,
                     new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
     public static final RegistryObject<SwordItem> ENDWAND = ITEMS.register("endwand",
             () -> new ShulkerWandItem(Tiers.NETHERITE, 2, (float) -1.9,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> BLAZEWAND = ITEMS.register("blazewand",
+            () -> new BlazeWandItem(Tiers.NETHERITE, 2, (float) -1.9,
+                    new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
+    public static final RegistryObject<SwordItem> BUGSYWAND = ITEMS.register("bugsywand",
+            () -> new BugsyWandItem(Tiers.NETHERITE, 2, (float) -1.9,
                     new Item.Properties().tab(ModCreativeModeTab.MONSTERSANDMUSHROOMS_TAB)));
     public static void register(IEventBus eventbus) {
         ITEMS.register(eventbus);
