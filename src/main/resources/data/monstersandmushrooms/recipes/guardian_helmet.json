@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R#R",
+    "E E"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_helmet"
+    },
+    "R": {
+      "item": "minecraft:prismarine_shard"
+    },
+    "E": {
+      "item": "minecraft:prismarine_crystals"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:guardian_helmet"
+  }
+}

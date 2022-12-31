@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "E E",
+    "R#R"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_boots"
+    },
+    "R": {
+      "item": "minecraft:ancient_debris"
+    },
+    "E": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:wither_boots"
+  }
+}

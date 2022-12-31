@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R#R",
+    "R R",
+    "R R"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_leggings"
+    },
+    "R": {
+      "item": "monstersandmushrooms:magic_mushroom"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:shroomster_leggings"
+  }
+}

@@ -1,7 +1,16 @@
 package net.aridastle.monstersandmushrooms.entity.custom;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffectUtil;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.NeutralMob;
@@ -13,8 +22,12 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.warden.WardenAi;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -125,5 +138,50 @@ public class Bugsy extends Monster implements IAnimatable, NeutralMob {
         }
 
         super.setTarget(p_21681_);
+    }
+
+    protected void playStepSound(BlockPos pos, BlockState blovkIn) {
+        this.playSound(SoundEvents.MOSS_STEP, 0.15F, 1.0F);
+    }
+
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.ALLAY_AMBIENT_WITHOUT_ITEM;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+        return SoundEvents.VEX_HURT;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.VEX_DEATH;
+    }
+    public static void applyChaosAround(ServerLevel p_219376_, Vec3 p_219377_, @javax.annotation.Nullable Entity p_219378_, int p_219379_) {
+        int max = 5;
+        int min = 0;
+        int rand_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+        MobEffectInstance mobeffectinstance = new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 500);
+        if(rand_int == 0) {mobeffectinstance = new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 500);}
+        else if (rand_int == 1) {mobeffectinstance = new MobEffectInstance(MobEffects.REGENERATION, 500);}
+        else if (rand_int == 2){mobeffectinstance = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 500);}
+        else if (rand_int == 3){mobeffectinstance = new MobEffectInstance(MobEffects.LEVITATION, 500);}
+        else if (rand_int == 4){mobeffectinstance = new MobEffectInstance(MobEffects.GLOWING, 500);}
+        else if (rand_int == 5){mobeffectinstance = new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 500);}
+        else if (rand_int == 6){mobeffectinstance = new MobEffectInstance(MobEffects.DIG_SPEED, 500);}
+        else if (rand_int == 7){mobeffectinstance = new MobEffectInstance(MobEffects.BLINDNESS, 500);}
+        else if (rand_int == 8){mobeffectinstance = new MobEffectInstance(MobEffects.HUNGER, 500);}
+        else if (rand_int == 9){mobeffectinstance = new MobEffectInstance(MobEffects.DAMAGE_BOOST, 500);}
+        MobEffectUtil.addEffectToPlayersAround(p_219376_, p_219378_, p_219377_, (double)p_219379_, mobeffectinstance, 200);
+    }
+    @Override
+    public void tick() {
+        super.tick();
+        if (!this.level.isClientSide) {
+            this.tickLeash();
+            if (this.tickCount % 500 == 0) {
+                this.updateControlFlags();
+                applyChaosAround((ServerLevel)level, this.position(), this, 20);
+            }
+        }
+
     }
 }

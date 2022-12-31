@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R#R",
+    "R R",
+    "E E"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_leggings"
+    },
+    "R": {
+      "item": "minecraft:prismarine_shard"
+    },
+    "E": {
+      "item": "minecraft:prismarine_crystals"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:guardian_leggings"
+  }
+}

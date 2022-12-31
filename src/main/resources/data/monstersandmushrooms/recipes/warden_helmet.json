@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R#R",
+    "E E"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_helmet"
+    },
+    "R": {
+      "item": "minecraft:skulk_shrieker"
+    },
+    "E": {
+      "item": "minecraft:skulk_sensor"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:warden_helmet"
+  }
+}

@@ -2,6 +2,7 @@ package net.aridastle.monstersandmushrooms.item.custom;
 
 import com.google.common.collect.ImmutableMap;
 import net.aridastle.monstersandmushrooms.item.ModArmorMaterials;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -25,7 +26,7 @@ public class BugsyArmorItem extends GeoArmorItem implements IAnimatable {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterials.SUSPICIOUS_LEAF, new MobEffectInstance(MobEffects.LUCK, 200, 1)).build();
+                    .put(ModArmorMaterials.SUSPICIOUS_LEAF, new MobEffectInstance(MobEffects.LUCK, 200)).build();
 
     public BugsyArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
         super(material, slot, settings);
@@ -73,6 +74,23 @@ public class BugsyArmorItem extends GeoArmorItem implements IAnimatable {
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
             player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
+        }
+        if (player.hurtTime < 1 && player.getLastHurtByMob() != null){
+            if(!(player.getLastHurtByMob().hasEffect(MobEffects.WEAKNESS)
+                    || player.getLastHurtByMob().hasEffect(MobEffects.POISON)
+                    || player.getLastHurtByMob().hasEffect(MobEffects.MOVEMENT_SLOWDOWN)
+                    || player.getLastHurtByMob().hasEffect(MobEffects.LEVITATION)
+                    || player.getLastHurtByMob().hasEffect(MobEffects.GLOWING))){
+            int max = 4;
+            int min = 0;
+            int rand_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+            if(rand_int == 0) {player.getLastHurtByMob().addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100));}
+            else if (rand_int == 1) {player.getLastHurtByMob().addEffect(new MobEffectInstance(MobEffects.POISON, 50));}
+            else if (rand_int == 2){player.getLastHurtByMob().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100));}
+            else if (rand_int == 3){player.getLastHurtByMob().addEffect(new MobEffectInstance(MobEffects.LEVITATION, 50));}
+            else if (rand_int == 4){player.getLastHurtByMob().addEffect(new MobEffectInstance(MobEffects.GLOWING, 100));}
+            }
         }
     }
 

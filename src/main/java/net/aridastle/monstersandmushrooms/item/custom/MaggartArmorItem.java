@@ -25,7 +25,8 @@ public class MaggartArmorItem extends GeoArmorItem implements IAnimatable {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterials.INSECT_LEG, new MobEffectInstance(MobEffects.LUCK, 200, 1)).build();
+                    .put(ModArmorMaterials.INSECT_LEG, new MobEffectInstance(MobEffects.POISON, 100)).build();
+
 
     public MaggartArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
         super(material, slot, settings);
@@ -71,7 +72,10 @@ public class MaggartArmorItem extends GeoArmorItem implements IAnimatable {
         boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
 
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
-            player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200));
+        }
+        if (player.hurtTime < 1 && player.getLastHurtByMob() != null){
+            player.getLastHurtByMob().addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
         }
     }

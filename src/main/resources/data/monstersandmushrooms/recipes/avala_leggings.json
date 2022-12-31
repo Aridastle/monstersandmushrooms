@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R#R",
+    "R R",
+    "R R"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_leggings"
+    },
+    "R": {
+      "item": "monstersandmushrooms:ice_crystal"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:avala_leggings"
+  }
+}

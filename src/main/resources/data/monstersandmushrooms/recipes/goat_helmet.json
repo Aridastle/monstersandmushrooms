@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R#R",
+    "R R"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_helmet"
+    },
+    "R": {
+      "item": "minecraft:goat_horn"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:goat_helmet"
+  }
+}

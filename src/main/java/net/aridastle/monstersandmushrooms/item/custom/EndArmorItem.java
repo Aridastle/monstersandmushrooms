@@ -25,7 +25,7 @@ public class EndArmorItem extends GeoArmorItem implements IAnimatable {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterials.END, new MobEffectInstance(MobEffects.LUCK, 200, 1)).build();
+                    .put(ModArmorMaterials.END, new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 1)).build();
 
     public EndArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
         super(material, slot, settings);
@@ -62,6 +62,7 @@ public class EndArmorItem extends GeoArmorItem implements IAnimatable {
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200));
             }
         }
     }
@@ -73,6 +74,9 @@ public class EndArmorItem extends GeoArmorItem implements IAnimatable {
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
             player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+            if(player.hurtTime < 1 && player.getLastHurtByMob() != null) {
+                player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 50));
+            }
         }
     }
 

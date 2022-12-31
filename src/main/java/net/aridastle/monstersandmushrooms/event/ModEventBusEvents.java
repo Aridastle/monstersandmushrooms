@@ -25,7 +25,6 @@ public class ModEventBusEvents {
         event.put(ModEntityTypes.MAGGART.get(), Maggart.setAttributes());
         event.put(ModEntityTypes.SHROOMSTER.get(), Maggart.setAttributes());
     }
-
     @SubscribeEvent
     public static void registerArmorRenderers(final EntityRenderersEvent.AddLayers event){
         GeoArmorRenderer.registerArmorRenderer(AvalaArmorItem.class, new AvalaArmorRenderer());

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "R R",
+    "E E"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_leggings"
+    },
+    "R": {
+      "item": "minecraft:skulk_shrieker"
+    },
+    "E": {
+      "item": "minecraft:skulk_sensor"
+    },
+    "X": {
+      "item": "minecraft:skulk_catalyst"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:warden_leggings"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "E E",
+    "R#R"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_boots"
+    },
+    "R": {
+      "item": "minecraft:shulker_shell"
+    },
+    "E": {
+      "item": "minecraft:chorus_fruit"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:end_boots"
+  }
+}

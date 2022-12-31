@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R#R",
+    "R R"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_helmet"
+    },
+    "R": {
+      "item": "monstersandmushrooms:insect_leg"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:maggart_helmet"
+  }
+}

@@ -1,5 +1,9 @@
 package net.aridastle.monstersandmushrooms.entity.custom;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -12,6 +16,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.CaveSpider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -71,4 +76,17 @@ public class Maggart extends CaveSpider implements IAnimatable {
         return this.factory;
     }
 
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.SLIME_SQUISH_SMALL;
+    }
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+        return SoundEvents.SLIME_SQUISH;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.GENERIC_DEATH;
+    }
 }

@@ -25,7 +25,7 @@ public class WardenArmorItem extends GeoArmorItem implements IAnimatable {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterials.WARDEN, new MobEffectInstance(MobEffects.LUCK, 200, 1)).build();
+                    .put(ModArmorMaterials.WARDEN, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200)).build();
 
     public WardenArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
         super(material, slot, settings);
@@ -73,6 +73,10 @@ public class WardenArmorItem extends GeoArmorItem implements IAnimatable {
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
             player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+        }
+        if (player.hurtTime < 1 && player.getLastHurtByMob() != null){
+            player.getLastHurtByMob().addEffect(new MobEffectInstance(MobEffects.DARKNESS, 200));
+            player.getLastHurtByMob().addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200));
         }
     }
 

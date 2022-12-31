@@ -1,20 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
-    "#R#",
-    "###"
+    "   ",
+    "R R",
+    "R#R"
   ],
   "key": {
     "#": {
-      "item": "minecraft:moss_block"
+      "item": "minecraft:diamond_boots"
     },
     "R": {
       "item": "monstersandmushrooms:suspicious_leaf"
     }
   },
   "result": {
-    "count": 16,
-    "item": "monstersandmushrooms:rocky_moss"
+    "count": 1,
+    "item": "monstersandmushrooms:bugsy_boots"
   }
 }

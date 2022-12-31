@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "E E",
+    "R#R",
+    "RXR"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_chestplate"
+    },
+    "R": {
+      "item": "minecraft:ancient_debris"
+    },
+    "E": {
+      "item": "minecraft:soul_sand"
+    },
+    "X": {
+      "item": "minecraft:wither_star"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:wither_chestplate"
+  }
+}

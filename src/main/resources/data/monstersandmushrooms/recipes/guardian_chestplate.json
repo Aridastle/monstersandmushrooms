@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "E E",
+    "R#R",
+    "EXE"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_chestplate"
+    },
+    "R": {
+      "item": "minecraft:prismarine_shard"
+    },
+    "E": {
+      "item": "minecraft:prismarine_crystals"
+    },
+    "X": {
+      "item": "minecraft:heart_of_the_sea"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:guardian_chestplate"
+  }
+}

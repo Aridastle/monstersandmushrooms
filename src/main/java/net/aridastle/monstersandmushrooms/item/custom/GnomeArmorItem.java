@@ -25,7 +25,7 @@ public class GnomeArmorItem extends GeoArmorItem implements IAnimatable {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterials.RARE_EARTH, new MobEffectInstance(MobEffects.LUCK, 200, 1)).build();
+                    .put(ModArmorMaterials.RARE_EARTH, new MobEffectInstance(MobEffects.NIGHT_VISION, 200)).build();
 
     public GnomeArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
         super(material, slot, settings);
@@ -62,6 +62,10 @@ public class GnomeArmorItem extends GeoArmorItem implements IAnimatable {
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200));
+                if(player.hurtTime < 1 && player.getLastHurtByMob() != null){
+                    player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 500, 2));
+                }
             }
         }
     }
@@ -70,7 +74,7 @@ public class GnomeArmorItem extends GeoArmorItem implements IAnimatable {
                                             MobEffectInstance mapStatusEffect) {
         boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
 
-        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+        if(hasCorrectArmorOn(mapArmorMaterial, player)) {
             player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
         }

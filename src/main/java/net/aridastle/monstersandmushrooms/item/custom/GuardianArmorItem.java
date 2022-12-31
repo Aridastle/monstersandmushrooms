@@ -20,7 +20,7 @@ import software.bernie.geckolib3.item.GeoArmorItem;
 
 import java.util.Map;
 
-public class GuardianArmorItem extends GeoArmorItem implements IAnimatable {
+public class    GuardianArmorItem extends GeoArmorItem implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
@@ -62,17 +62,18 @@ public class GuardianArmorItem extends GeoArmorItem implements IAnimatable {
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200));
             }
         }
     }
 
     private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
                                             MobEffectInstance mapStatusEffect) {
-        boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
 
-        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+        if(hasCorrectArmorOn(mapArmorMaterial, player)) {
             player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+            player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 200));
         }
     }
 
