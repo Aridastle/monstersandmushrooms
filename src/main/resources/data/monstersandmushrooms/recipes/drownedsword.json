@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "RER",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:trident"
+    },
+    "R": {
+      "item": "minecraft:nautilus_shell"
+    },
+    "E": {
+      "item": "minecraft:nautilus_shell"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:drownedsword"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "RER",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_sword"
+    },
+    "R": {
+      "item": "minecraft:gilded_blackstone"
+    },
+    "E": {
+      "item": "minecraft:ancient_debris"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:brutesword"
+  }
+}

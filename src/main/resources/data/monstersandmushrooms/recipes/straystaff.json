@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "RER",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_sword"
+    },
+    "R": {
+      "item": "minecraft:bone_block"
+    },
+    "E": {
+      "item": "minecraft:tipped_arrow"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:straystaff"
+  }
+}

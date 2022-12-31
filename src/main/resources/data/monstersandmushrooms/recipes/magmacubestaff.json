@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "XEX",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_sword"
+    },
+    "R": {
+      "item": "minecraft:crimson_fungus"
+    },
+    "E": {
+      "item": "minecraft:magma_cream"
+    },
+    "X": {
+      "item": "minecraft:warped_fungus"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:magmacubestaff"
+  }
+}

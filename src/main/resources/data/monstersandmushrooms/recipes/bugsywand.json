@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "RER",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_sword"
+    },
+    "R": {
+      "item": "minecraft:moss_block"
+    },
+    "E": {
+      "item": "monstersandmushrooms:suspicious_leaf"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:bugsywand"
+  }
+}

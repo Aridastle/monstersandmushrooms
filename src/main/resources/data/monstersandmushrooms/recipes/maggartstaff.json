@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "RER",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_sword"
+    },
+    "R": {
+      "item": "minecraft:spider_eye"
+    },
+    "E": {
+      "item": "monstersandmushrooms:insect_leg"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "monstersandmushrooms:maggartstaff"
+  }
+}
