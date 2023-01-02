@@ -9,10 +9,10 @@
       "item": "minecraft:diamond_helmet"
     },
     "R": {
-      "item": "minecraft:skulk_shrieker"
+      "item": "minecraft:sculk_shrieker"
     },
     "E": {
-      "item": "minecraft:skulk_sensor"
+      "item": "minecraft:sculk_sensor"
     }
   },
   "result": {

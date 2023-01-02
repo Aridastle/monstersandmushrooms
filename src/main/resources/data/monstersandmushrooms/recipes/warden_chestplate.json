@@ -10,13 +10,13 @@
       "item": "minecraft:diamond_chestplate"
     },
     "R": {
-      "item": "minecraft:skulk_shrieker"
+      "item": "minecraft:sculk_shrieker"
     },
     "E": {
-      "item": "minecraft:skulk_sensor"
+      "item": "minecraft:sculk_sensor"
     },
     "X": {
-      "item": "minecraft:skulk_catalyst"
+      "item": "minecraft:sculk_catalyst"
     }
   },
   "result": {
