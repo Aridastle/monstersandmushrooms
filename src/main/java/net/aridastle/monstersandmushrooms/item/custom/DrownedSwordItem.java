@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -64,7 +65,7 @@ public class DrownedSwordItem extends SwordItem implements IAnimatable {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
             tridentSummon(player, level);
-            player.getCooldowns().addCooldown(this, 20);
+            player.getCooldowns().addCooldown(this, 50);
         }
 
         return super.use(level, player, hand);
@@ -72,8 +73,9 @@ public class DrownedSwordItem extends SwordItem implements IAnimatable {
 
     private void tridentSummon(Player player, Level level) {
         ThrownTrident friendlyTrident = new ThrownTrident(EntityType.TRIDENT, level);
-        friendlyTrident.moveTo(player.getPosition(0).x,player.getPosition(0).y + 2, player.getPosition(0).z );
-        friendlyTrident.setDeltaMovement(player.getViewVector(0));
+        Vec3 facing = player.getViewVector(1);
+        friendlyTrident.moveTo(player.getPosition(0).x+facing.x,player.getPosition(0).y + 1.5, player.getPosition(0).z+facing.z );
+        friendlyTrident.setDeltaMovement(facing.x * 2, facing.y * 2, facing.z * 2);
         level.addFreshEntity(friendlyTrident);
     }
 }

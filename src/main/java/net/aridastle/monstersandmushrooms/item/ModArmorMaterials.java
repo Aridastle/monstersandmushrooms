@@ -16,10 +16,10 @@ public enum ModArmorMaterials implements ArmorMaterial {
         return Ingredient.of(ModItems.SUSPICIOUS_LEAF.get());
     }),
     EVOKER("evoker", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 3.0F, 0.1F, () -> {
-        return Ingredient.of(Items.TOTEM_OF_UNDYING);
+        return Ingredient.of(Items.EMERALD_BLOCK);
     }),
     WITHER("wither", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 3.0F, 0.1F, () -> {
-        return Ingredient.of(Items.ANCIENT_DEBRIS);
+        return Ingredient.of(Items.NETHERITE_SCRAP);
     }),
     MAGIC_MUSHROOM("magic_mushroom", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 3.0F, 0.1F, () -> {
         return Ingredient.of(ModItems.MAGIC_MUSHROOM.get());

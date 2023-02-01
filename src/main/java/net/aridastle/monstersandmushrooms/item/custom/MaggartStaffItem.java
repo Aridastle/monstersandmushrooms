@@ -79,6 +79,7 @@ public class MaggartStaffItem extends SwordItem implements IAnimatable {
         AreaEffectCloud lingeringPotion = new AreaEffectCloud(EntityType.AREA_EFFECT_CLOUD, level);
         lingeringPotion.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 2));
         lingeringPotion.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100));
+        lingeringPotion.addEffect(new MobEffectInstance(MobEffects.HUNGER, 100));
         lingeringPotion.moveTo(to);
         level.addFreshEntity(lingeringPotion);
     }

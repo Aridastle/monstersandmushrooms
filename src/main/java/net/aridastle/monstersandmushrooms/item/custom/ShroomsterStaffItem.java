@@ -68,7 +68,7 @@ public class ShroomsterStaffItem extends SwordItem implements IAnimatable {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
             voidEffect(player,level);
-            player.getCooldowns().addCooldown(this, 1000);
+            player.getCooldowns().addCooldown(this, 600);
         }
 
         return super.use(level, player, hand);
@@ -79,6 +79,7 @@ public class ShroomsterStaffItem extends SwordItem implements IAnimatable {
         AreaEffectCloud lingeringPotion = new AreaEffectCloud(EntityType.AREA_EFFECT_CLOUD, level);
         lingeringPotion.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 500));
         lingeringPotion.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 500));
+        lingeringPotion.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 500));
         lingeringPotion.moveTo(to);
         level.addFreshEntity(lingeringPotion);
     }

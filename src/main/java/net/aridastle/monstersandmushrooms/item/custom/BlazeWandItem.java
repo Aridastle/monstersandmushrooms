@@ -79,8 +79,9 @@ public class BlazeWandItem extends SwordItem implements IAnimatable {
     private void fireAttack(Player player, Level level){
         LargeFireball friendlyFire = new LargeFireball(EntityType.FIREBALL, level);
         friendlyFire.setOwner(player);
-        friendlyFire.moveTo(player.getPosition(0).x,player.getPosition(0).y + 2, player.getPosition(0).z );
-        friendlyFire.setDeltaMovement(player.getViewVector(0));
+        Vec3 facing = player.getViewVector(1);
+        friendlyFire.moveTo(player.getPosition(0).x+facing.x,player.getPosition(0).y+1.5, player.getPosition(0).z + facing.z);
+        friendlyFire.setDeltaMovement(facing.x * 3, facing.y * 3, facing.z * 3);
         level.addFreshEntity(friendlyFire);
     }
 }

@@ -76,12 +76,12 @@ public class ChorusSwordItem extends SwordItem implements IAnimatable {
         stack.hurtAndBreak(1, attacker, (p_43296_) -> {
             p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
         });
-        target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 30, 5));
+        target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 25, 9));
         return true;
     }
 
     private void swordEffect(Player player) {
-        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 30, 5));
+        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 9));
     }
 
 }

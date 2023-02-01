@@ -70,14 +70,14 @@ public class BugsyWandItem extends SwordItem implements IAnimatable {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
             weirdEffect(player);
-            player.getCooldowns().addCooldown(this, 400);
+            player.getCooldowns().addCooldown(this, 200);
         }
 
         return super.use(level, player, hand);
     }
     private void weirdEffect(Player player) {
         player.addEffect(new MobEffectInstance(MobEffects.LUCK, 200, 2));
-        player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 2));
-        player.addEffect(new MobEffectInstance(MobEffects.HEAL, 1));
+        player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 50, 2));
+        player.addEffect(new MobEffectInstance(MobEffects.HEAL, 3));
     }
 }

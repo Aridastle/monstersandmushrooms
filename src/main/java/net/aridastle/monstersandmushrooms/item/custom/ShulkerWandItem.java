@@ -76,8 +76,9 @@ public class ShulkerWandItem extends SwordItem implements IAnimatable {
     private void bulletEffect(Player player, Level level) {
         ShulkerBullet friendlyBullet = new ShulkerBullet(EntityType.SHULKER_BULLET, level);
         friendlyBullet.setOwner(player);
-        friendlyBullet.moveTo(player.getPosition(0).x,player.getPosition(0).y + 2, player.getPosition(0).z );
-        friendlyBullet.setDeltaMovement(player.getViewVector(0));
+        Vec3 facing = player.getViewVector(1);
+        friendlyBullet.moveTo(player.getPosition(0).x+facing.x,player.getPosition(0).y + 1.5, player.getPosition(0).z+facing.z );
+        friendlyBullet.setDeltaMovement(facing.x * 3, facing.y * 3, facing.z * 3);
         level.addFreshEntity(friendlyBullet);
     }
 

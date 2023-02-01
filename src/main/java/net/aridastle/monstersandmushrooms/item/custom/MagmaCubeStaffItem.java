@@ -66,7 +66,7 @@ public class MagmaCubeStaffItem extends SwordItem implements IAnimatable {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
             magmaEffect(player);
-            player.getCooldowns().addCooldown(this, 750);
+            player.getCooldowns().addCooldown(this, 600);
         }
 
         return super.use(level, player, hand);
@@ -74,6 +74,6 @@ public class MagmaCubeStaffItem extends SwordItem implements IAnimatable {
 
     private void magmaEffect(Player player) {
         player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 500));
-        player.addEffect(new MobEffectInstance(MobEffects.JUMP, 500, 2));
+        player.addEffect(new MobEffectInstance(MobEffects.JUMP, 500, 4));
     }
 }

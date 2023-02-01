@@ -83,6 +83,7 @@ public class StrayStaffItem extends SwordItem implements IAnimatable {
         AreaEffectCloud lingeringPotion = new AreaEffectCloud(EntityType.AREA_EFFECT_CLOUD, level);
         lingeringPotion.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 4));
         lingeringPotion.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 2));
+        lingeringPotion.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 4));
         lingeringPotion.moveTo(to);
         level.addFreshEntity(lingeringPotion);
     }
