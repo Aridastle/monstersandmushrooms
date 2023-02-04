@@ -25,7 +25,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "minecraft:insect_leg"
+          "name": "monstersandmushrooms:insect_leg"
         }
       ],
       "rolls": 1.0
