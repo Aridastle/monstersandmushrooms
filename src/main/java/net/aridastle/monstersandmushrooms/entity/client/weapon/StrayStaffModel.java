@@ -3,9 +3,9 @@ package net.aridastle.monstersandmushrooms.entity.client.weapon;
 import net.aridastle.monstersandmushrooms.item.custom.StrayStaffItem;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class StrayStaffModel extends AnimatedGeoModel<StrayStaffItem> {
+public class StrayStaffModel extends GeoModel<StrayStaffItem> {
     @Override
     public ResourceLocation getModelResource(StrayStaffItem object) {
         return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/straystaff.geo.json");

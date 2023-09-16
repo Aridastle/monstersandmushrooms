@@ -3,9 +3,9 @@ package net.aridastle.monstersandmushrooms.entity.client.weapon;
 import net.aridastle.monstersandmushrooms.item.custom.BugsyWandItem;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class BugsyWandModel extends AnimatedGeoModel<BugsyWandItem> {
+public class BugsyWandModel extends GeoModel<BugsyWandItem> {
     @Override
     public ResourceLocation getModelResource(BugsyWandItem object) {
         return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/bugsywand.geo.json");

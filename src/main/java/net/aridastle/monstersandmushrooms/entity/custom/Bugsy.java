@@ -16,33 +16,30 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.NeutralMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.warden.WardenAi;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib3.core.AnimationState;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.UUID;
 
-public class Bugsy extends Monster implements IAnimatable, NeutralMob {
+public class Bugsy extends Monster implements GeoEntity, NeutralMob {
 
-    private AnimationFactory factory = new AnimationFactory(this);
+    private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
     public Bugsy(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
@@ -70,32 +67,32 @@ public class Bugsy extends Monster implements IAnimatable, NeutralMob {
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 8.0F));
     }
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+    private PlayState predicate(AnimationState state) {
         boolean walking = ((this.getDeltaMovement().x != 0.0) || (this.getDeltaMovement().z != 0.0));
         if (walking){
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bugsy.walk", true));
+            state.getController().setAnimation(RawAnimation.begin().then("animation.bugsy.walk", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bugsy.idle", true));
+        state.getController().setAnimation(RawAnimation.begin().then("animation.bugsy.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
-    private PlayState attackPredicate(AnimationEvent event) {
-        if(this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
-            event.getController().markNeedsReload();
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bugsy.attack", false));
+    private PlayState attackPredicate(AnimationState state) {
+        if(this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
+            state.getController().forceAnimationReset();
+            state.getController().setAnimation(RawAnimation.begin().then("animation.bugsy.attack", Animation.LoopType.PLAY_ONCE));
             this.swinging = false;
         }
         return PlayState.CONTINUE;
     }
 
     @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
-        data.addAnimationController(new AnimationController(this, "attackcontroller", 0, this::attackPredicate));
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController(this, "controller", 0, this::predicate));
+        controllers.add(new AnimationController(this, "attackcontroller", 0, this::attackPredicate));
     }
 
     @Override
-    public AnimationFactory getFactory() {
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.factory;
     }
 
@@ -175,11 +172,11 @@ public class Bugsy extends Monster implements IAnimatable, NeutralMob {
     @Override
     public void tick() {
         super.tick();
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide) {
             this.tickLeash();
             if (this.tickCount % 500 == 0) {
                 this.updateControlFlags();
-                applyChaosAround((ServerLevel)level, this.position(), this, 20);
+                applyChaosAround((ServerLevel) level(), this.position(), this, 20);
             }
         }
 

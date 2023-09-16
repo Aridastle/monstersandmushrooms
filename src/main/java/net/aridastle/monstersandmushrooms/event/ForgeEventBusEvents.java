@@ -39,7 +39,7 @@ public class ForgeEventBusEvents {
                 for(double i = gnome_spawn.getBoundingBox().minX; i <= gnome_spawn.getBoundingBox().maxX; i++){
                     for(double j = gnome_spawn.getBoundingBox().minY; j <= gnome_spawn.getBoundingBox().maxY; j++) {
                         for (double k = gnome_spawn.getBoundingBox().minZ; k <= gnome_spawn.getBoundingBox().maxZ; k++) {
-                            block_temp = new BlockPos(i, j, k);
+                            block_temp = new BlockPos((int)i, (int)j, (int)k);
                             level.destroyBlock(block_temp, true, gnome_spawn);
                         }
                     }
@@ -55,7 +55,7 @@ public class ForgeEventBusEvents {
                 for(double i = shroomster_spawn.getBoundingBox().minX; i <= shroomster_spawn.getBoundingBox().maxX; i++){
                     for(double j = shroomster_spawn.getBoundingBox().minY; j <= shroomster_spawn.getBoundingBox().maxY; j++) {
                         for (double k = shroomster_spawn.getBoundingBox().minZ; k <= shroomster_spawn.getBoundingBox().maxZ; k++) {
-                            block_temp = new BlockPos(i, j, k);
+                            block_temp = new BlockPos((int)i, (int)j, (int)k);
                             level.destroyBlock(block_temp, true, shroomster_spawn);
                         }
                     }
@@ -73,7 +73,7 @@ public class ForgeEventBusEvents {
                 for(double i = bugsy_spawn.getBoundingBox().minX; i <= bugsy_spawn.getBoundingBox().maxX; i++){
                     for(double j = bugsy_spawn.getBoundingBox().minY; j <= bugsy_spawn.getBoundingBox().maxY; j++) {
                         for (double k = bugsy_spawn.getBoundingBox().minZ; k <= bugsy_spawn.getBoundingBox().maxZ; k++) {
-                            block_temp = new BlockPos(i, j, k);
+                            block_temp = new BlockPos((int)i, (int)j, (int)k);
                             level.destroyBlock(block_temp, true, bugsy_spawn);
                         }
                     }
@@ -89,7 +89,7 @@ public class ForgeEventBusEvents {
                 for(double i = maggart_spawn.getBoundingBox().minX; i <= maggart_spawn.getBoundingBox().maxX; i++){
                     for(double j = maggart_spawn.getBoundingBox().minY; j <= maggart_spawn.getBoundingBox().maxY; j++) {
                         for (double k = maggart_spawn.getBoundingBox().minZ; k <= maggart_spawn.getBoundingBox().maxZ; k++) {
-                            block_temp = new BlockPos(i, j, k);
+                            block_temp = new BlockPos((int)i, (int)j, (int)k);
                             level.destroyBlock(block_temp, true, maggart_spawn);
                         }
                     }
@@ -107,7 +107,7 @@ public class ForgeEventBusEvents {
                 for(double i = avala_spawn.getBoundingBox().minX; i <= avala_spawn.getBoundingBox().maxX; i++){
                     for(double j = avala_spawn.getBoundingBox().minY; j <= avala_spawn.getBoundingBox().maxY; j++) {
                         for (double k = avala_spawn.getBoundingBox().minZ; k <= avala_spawn.getBoundingBox().maxZ; k++) {
-                            block_temp = new BlockPos(i, j, k);
+                            block_temp = new BlockPos((int)i, (int)j, (int)k);
                             level.destroyBlock(block_temp, true, avala_spawn);
                         }
                     }

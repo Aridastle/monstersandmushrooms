@@ -3,9 +3,9 @@ package net.aridastle.monstersandmushrooms.entity.client;
 import net.aridastle.monstersandmushrooms.entity.custom.Shroomster;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class ShroomsterModel extends AnimatedGeoModel<Shroomster> {
+public class ShroomsterModel extends GeoModel<Shroomster> {
     @Override
     public ResourceLocation getModelResource(Shroomster object) {
         return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/shroomster.geo.json");

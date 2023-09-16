@@ -16,18 +16,16 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.function.Consumer;
 
-public class ShulkerWandItem extends SwordItem implements IAnimatable {
-    public AnimationFactory factory = new AnimationFactory(this);
+public class ShulkerWandItem extends SwordItem implements GeoAnimatable {
+    public AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
 
     public ShulkerWandItem(Tier ttier, int attack_damage, float attack_speed, Item.Properties pproperties) {
         super(ttier, attack_damage, attack_speed, pproperties);
@@ -48,19 +46,24 @@ public class ShulkerWandItem extends SwordItem implements IAnimatable {
     }
 
     @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController(this, "controller", 0, this::predicate));
     }
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.endwand.aura", true));
+    private PlayState predicate(AnimationState state) {
+        state.getController().setAnimation(RawAnimation.begin().then("animation.endwand.aura", Animation.LoopType.LOOP));
 
         return PlayState.CONTINUE;
     }
 
     @Override
-    public AnimationFactory getFactory() {
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.factory;
+    }
+
+    @Override
+    public double getTick(Object object) {
+        return 0;
     }
 
     @Override

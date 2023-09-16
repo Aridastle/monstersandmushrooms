@@ -3,9 +3,9 @@ package net.aridastle.monstersandmushrooms.entity.client;
 import net.aridastle.monstersandmushrooms.entity.custom.Bugsy;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class BugsyModel extends AnimatedGeoModel<Bugsy> {
+public class BugsyModel extends GeoModel<Bugsy> {
     @Override
     public ResourceLocation getModelResource(Bugsy object) {
         return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/bugsy.geo.json");

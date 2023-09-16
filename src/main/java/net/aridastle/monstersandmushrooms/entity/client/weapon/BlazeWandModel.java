@@ -3,9 +3,9 @@ package net.aridastle.monstersandmushrooms.entity.client.weapon;
 import net.aridastle.monstersandmushrooms.item.custom.BlazeWandItem;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class BlazeWandModel extends AnimatedGeoModel<BlazeWandItem> {
+public class BlazeWandModel extends GeoModel<BlazeWandItem> {
     @Override
     public ResourceLocation getModelResource(BlazeWandItem object) {
         return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/blazewand.geo.json");

@@ -3,17 +3,17 @@ package net.aridastle.monstersandmushrooms.entity.client.armor;
 import net.aridastle.monstersandmushrooms.item.custom.GuardianArmorItem;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class GuardianArmorModel extends AnimatedGeoModel<GuardianArmorItem> {
+public class GuardianArmorModel extends GeoModel<GuardianArmorItem> {
     @Override
     public ResourceLocation getModelResource(GuardianArmorItem object) {
-        return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/guardianmedium.geo.json");
+        return new ResourceLocation(monstersandmushrooms.MOD_ID, "guardianmedium");
     }
 
     @Override
     public ResourceLocation getTextureResource(GuardianArmorItem object) {
-        return new ResourceLocation(monstersandmushrooms.MOD_ID,"textures/models/armor/guardianmedium.png");
+        return new ResourceLocation(monstersandmushrooms.MOD_ID,"guardianmedium.png");
     }
 
     @Override

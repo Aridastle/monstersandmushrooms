@@ -3,9 +3,9 @@ package net.aridastle.monstersandmushrooms.entity.client.weapon;
 import net.aridastle.monstersandmushrooms.item.custom.GnomeSwordItem;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class GnomeSwordModel extends AnimatedGeoModel<GnomeSwordItem> {
+public class GnomeSwordModel extends GeoModel<GnomeSwordItem> {
     @Override
     public ResourceLocation getModelResource(GnomeSwordItem object) {
         return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/gnomesword.geo.json");

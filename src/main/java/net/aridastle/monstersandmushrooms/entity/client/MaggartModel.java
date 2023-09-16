@@ -3,9 +3,9 @@ package net.aridastle.monstersandmushrooms.entity.client;
 import net.aridastle.monstersandmushrooms.entity.custom.Maggart;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class MaggartModel extends AnimatedGeoModel<Maggart> {
+public class MaggartModel extends GeoModel<Maggart> {
     @Override
     public ResourceLocation getModelResource(Maggart object) {
         return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/maggart.geo.json");

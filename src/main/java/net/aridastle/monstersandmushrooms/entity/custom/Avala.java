@@ -17,18 +17,15 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import software.bernie.geckolib3.core.AnimationState;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
 
-public class Avala extends Monster implements IAnimatable {
+public class Avala extends Monster implements GeoEntity {
 
-    private AnimationFactory factory = new AnimationFactory(this);
+    private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
     public Avala(EntityType<? extends Monster> p_33002_, Level p_33003_) { super(p_33002_, p_33003_); }
 
     public static AttributeSupplier setAttributes() {
@@ -48,32 +45,32 @@ public class Avala extends Monster implements IAnimatable {
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 8.0F));
     }
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+    private PlayState predicate(AnimationState state) {
         boolean walking = ((this.getDeltaMovement().x != 0.0) || (this.getDeltaMovement().z != 0.0));
         if (walking){
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.avala.walk", true));
+            state.getController().setAnimation(RawAnimation.begin().then("animation.avala.walk", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.avala.idle", true));
+        state.getController().setAnimation(RawAnimation.begin().then("animation.avala.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
-    private PlayState attackPredicate(AnimationEvent event) {
-        if(this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
-            event.getController().markNeedsReload();
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.avala.attack", false));
+    private PlayState attackPredicate(AnimationState state) {
+        if(this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
+            state.getController().forceAnimationReset();
+            state.getController().setAnimation(RawAnimation.begin().then("animation.avala.attack", Animation.LoopType.PLAY_ONCE));
             this.swinging = false;
         }
         return PlayState.CONTINUE;
     }
 
     @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
-        data.addAnimationController(new AnimationController(this, "attackcontroller", 0, this::attackPredicate));
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController(this, "controller", 0, this::predicate));
+        controllers.add(new AnimationController(this, "attackcontroller", 0, this::attackPredicate));
     }
 
     @Override
-    public AnimationFactory getFactory() {
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.factory;
     }
 

@@ -3,9 +3,9 @@ package net.aridastle.monstersandmushrooms.entity.client;
 import net.aridastle.monstersandmushrooms.entity.custom.Gnome;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class GnomeModel extends AnimatedGeoModel<Gnome> {
+public class GnomeModel extends GeoModel<Gnome> {
     @Override
     public ResourceLocation getModelResource(Gnome object) {
         return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/gnome.geo.json");

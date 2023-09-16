@@ -3,17 +3,17 @@ package net.aridastle.monstersandmushrooms.entity.client.armor;
 import net.aridastle.monstersandmushrooms.item.custom.AvalaArmorItem;
 import net.aridastle.monstersandmushrooms.monstersandmushrooms;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.GeoModel;
 
-public class AvalaArmorModel extends AnimatedGeoModel<AvalaArmorItem> {
+public class AvalaArmorModel extends GeoModel<AvalaArmorItem> {
     @Override
     public ResourceLocation getModelResource(AvalaArmorItem object) {
-        return new ResourceLocation(monstersandmushrooms.MOD_ID, "geo/avalaheavy.geo.json");
+        return new ResourceLocation(monstersandmushrooms.MOD_ID, "avalaheavy");
     }
 
     @Override
     public ResourceLocation getTextureResource(AvalaArmorItem object) {
-        return new ResourceLocation(monstersandmushrooms.MOD_ID,"textures/models/armor/avalaheavy.png");
+        return new ResourceLocation(monstersandmushrooms.MOD_ID,"avalaheavy.png");
     }
 
     @Override

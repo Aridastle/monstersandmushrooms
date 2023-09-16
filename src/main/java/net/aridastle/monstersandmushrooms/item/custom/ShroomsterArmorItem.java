@@ -1,48 +1,75 @@
 package net.aridastle.monstersandmushrooms.item.custom;
 
 import com.google.common.collect.ImmutableMap;
+import net.aridastle.monstersandmushrooms.entity.client.armor.ShroomsterArmorRenderer;
 import net.aridastle.monstersandmushrooms.item.ModArmorMaterials;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
-import software.bernie.geckolib3.item.GeoArmorItem;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import org.jetbrains.annotations.NotNull;
+import software.bernie.geckolib.animatable.GeoItem;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.Map;
+import java.util.function.Consumer;
 
-public class ShroomsterArmorItem extends GeoArmorItem implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+public class ShroomsterArmorItem extends ArmorItem implements GeoAnimatable, GeoItem {
+    private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
                     .put(ModArmorMaterials.MAGIC_MUSHROOM, new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200)).build();
 
-    public ShroomsterArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
+    public ShroomsterArmorItem(ArmorMaterial material, Type slot, Properties settings) {
         super(material, slot, settings);
     }
 
     @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<ShroomsterArmorItem>(this, "controller",
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            private GeoArmorRenderer<?> renderer;
+
+            @Override
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+                if (this.renderer == null)
+                    this.renderer = new ShroomsterArmorRenderer();
+
+                // This prepares our GeoArmorRenderer for the current render frame.
+                // These parameters may be null however, so we don't do anything further with them
+                this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
+
+                return this.renderer;
+            }
+        });
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<ShroomsterArmorItem>(this, "controller",
                 20, this::predicate));
     }
 
     @Override
-    public AnimationFactory getFactory() {
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.factory;
     }
 
-    private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event) {
+    private PlayState predicate(AnimationState state) {
         return PlayState.CONTINUE;
     }
 
